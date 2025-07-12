@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Interface</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'chat/styles.css' %}?v=4" />
+</head>
+<body>
+  <div id="chat-background">
+    <!-- Sidebar -->
+    <nav id="sidebar" aria-label="Sidebar menu">
+      <h2>Menu</h2>
+      <ul>
+        <li tabindex="0">History</li>
+        <li tabindex="0">Settings</li>
+        <li tabindex="0">Help</li>
+      </ul>
+    </nav>
+
+    <!-- Chat Area -->
+    <main id="chat-container">
+      <header id="chat-header">
+        <button id="menu-button" aria-label="Toggle menu">&#9776;</button>
+        <h1 id="header-title">SAVAS AI</h1>
+      </header>
+
+      <section id="messages" role="log" aria-live="polite" aria-relevant="additions"></section>
+
+      <form id="input-area" onsubmit="return false;">
+        <input type="text" id="message-input" placeholder="Ask Savas anything..." autocomplete="off" aria-label="Message input" required/>
+        <button id="send-button" aria-label="Send message"></button>
+      </form>
+    </main>
+  </div>
+
+  <script src="{% static 'chat/scripts.js' %}?v=3"></script>
+</body>
+</html>
